@@ -1,0 +1,5 @@
+app:
+  aggregate:
+    # 集計範囲
+    from:
+    to:
