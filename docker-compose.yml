@@ -1,0 +1,29 @@
+version: "3.5"
+
+services:
+  elasticsearch:
+    build:
+      context: elasticsearch
+    ports:
+      - "9200:9200"
+  es-spark:
+    build:
+      context: elasticsearch-spark
+    ports:
+      - "8080:8080"
+    tty: true
+  spark-worker:
+    build:
+      context: spark-worker
+    tty: true
+    ports:
+      - "8090:8080"
+      - "8091:8081"
+  batch:
+    build:
+      context: management-batch
+    command:
+      - /bin/bash
+    tty: true
+    ports:
+      - "4040:4040"
