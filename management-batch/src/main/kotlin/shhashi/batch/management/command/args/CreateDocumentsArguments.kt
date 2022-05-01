@@ -6,7 +6,7 @@ import java.time.OffsetDateTime
 
 @ConstructorBinding
 @ConfigurationProperties(prefix = "app.aggregate")
-class AggregationExtractorArguments(
+class CreateDocumentsArguments(
     var from: OffsetDateTime? = null,
     var to: OffsetDateTime? = null
 ) {
